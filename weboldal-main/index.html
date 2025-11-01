@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Video Generalas</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav>
+    <ul>
+      <li class="logo">CGNV<span>*</span></li>
+      <li><a href="#" id="kapcsolat">KAPCSOLAT</a></li>
+      <li><a href="#" id="hogyan">HOGYAN MUKODIK?</a></li>
+      <li><a href="#" id="reg">REGISZTRACIO</a></li>
+      <li><a href="#" id="belepes">BELEPES</a></li>
+    </ul>
+  </nav>
+
+  <div class="main-content">
+    <h1>KESZITS EL EGY<br>ROVID VIDEOT<br>EGY KATTINTASSAL</h1>
+    <button id="generate-btn" class="btn">VIDEO GENERALASA</button>
+  </div>
+
+  <div id="registration-modal" class="modal" aria-hidden="true" role="dialog" aria-labelledby="registration-title">
+    <div class="modal__content">
+      <button id="close-modal" class="modal__close" aria-label="Bezaras">&times;</button>
+      <h2 id="registration-title">Regisztracio</h2>
+      <p class="modal__subtitle">Hozz letre fiokodat es kezdd el a videok generalasat pillanatok alatt!</p>
+      <form id="registration-form" novalidate>
+        <label for="full-name">Teljes nev</label>
+        <input type="text" id="full-name" name="full-name" placeholder="Pl.: Kiss Peter" required>
+
+        <label for="email">E-mail cim</label>
+        <input type="email" id="email" name="email" placeholder="pelda@pelda.hu" required>
+
+        <label for="password">Jelszo</label>
+        <input type="password" id="password" name="password" placeholder="Minimum 8 karakter" minlength="8" required>
+
+        <button type="submit" class="btn modal__submit">Regisztracio inditasa</button>
+      </form>
+      <p id="registration-feedback" class="modal__feedback" role="status" aria-live="polite"></p>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
