@@ -3,41 +3,219 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Video Generalas</title>
+  <title>CGNV | AI Videók egy kattintással</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <nav>
-    <ul>
-      <li class="logo">CGNV<span>*</span></li>
-      <li><a href="#" id="kapcsolat">KAPCSOLAT</a></li>
-      <li><a href="#" id="hogyan">HOGYAN MUKODIK?</a></li>
-      <li><a href="#" id="reg">REGISZTRACIO</a></li>
-      <li><a href="#" id="belepes">BELEPES</a></li>
-    </ul>
-  </nav>
+  <header class="topbar">
+    <div class="logo">CGNV<span>*</span></div>
+    <nav>
+      <ul>
+        <li><a href="#szolgaltatasok" id="hogyan">FUNKCIOK</a></li>
+        <li><a href="#folyamat">HOGYAN MUKODIK?</a></li>
+        <li><a href="#ertekelesek">VISSZAJELZESEK</a></li>
+        <li><a href="#kapcsolat" id="kapcsolat">KAPCSOLAT</a></li>
+      </ul>
+    </nav>
+    <div class="actions">
+      <button id="reg" class="link-btn">Regisztracio</button>
+      <button id="belepes" class="outline-btn">Belepes</button>
+    </div>
+  </header>
 
-  <div class="main-content">
-    <h1>KESZITS EL EGY<br>ROVID VIDEOT<br>EGY KATTINTASSAL</h1>
-    <button id="generate-btn" class="btn">VIDEO GENERALASA</button>
-  </div>
+  <main>
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero__badge">On-the-fly generálás • 4K kimenet • Felirat támogatás</div>
+      <div class="hero__grid">
+        <div class="hero__text">
+          <h1 id="hero-title">Készíts el egy ütős videót <span>egy kattintással</span></h1>
+          <p class="lead">Adatvezérelt AI motorunk percek alatt rövid, megosztásra kész klippeket állít elő. Brief be, kreatív videó ki.</p>
+          <div class="hero__cta">
+            <button id="generate-btn" class="btn">Videó generálása</button>
+            <button class="btn ghost" data-scroll="#szolgaltatasok">Mit tud a platform?</button>
+          </div>
+          <div class="hero__status" id="generator-status" role="status" aria-live="polite">Válaszd ki a briefet, indítsd a generálást, és percek múlva készen áll a publikálásra.</div>
+          <div class="hero__meta">
+            <div class="pill">Prompt + Fotó/Clip feltöltés</div>
+            <div class="pill">Automatikus felirat & hang</div>
+            <div class="pill">Brand safe sablonok</div>
+          </div>
+        </div>
+        <div class="hero__card" aria-label="Előnézeti panel">
+          <div class="hero__card__header">
+            <div class="dot"></div><div class="dot"></div><div class="dot"></div>
+            <span>CGNV Preview</span>
+          </div>
+          <div class="hero__card__body">
+            <p class="small-title">Reklámvideó / 12 mp</p>
+            <div class="preview">
+              <div class="preview__overlay"></div>
+              <p>AI jelenetépítés folyamatban...</p>
+            </div>
+            <div class="progress">
+              <div class="progress__bar" id="progress-bar" style="width: 18%"></div>
+            </div>
+            <div class="stats">
+              <div>
+                <p class="stat__label">Készült videók</p>
+                <p class="stat__value" data-target="2480">0</p>
+              </div>
+              <div>
+                <p class="stat__label">Átlagos render</p>
+                <p class="stat__value">2 perc</p>
+              </div>
+              <div>
+                <p class="stat__label">Megosztási arány</p>
+                <p class="stat__value">+63%</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="szolgaltatasok" class="section cards" aria-labelledby="szolgaltatasok-title">
+      <div class="section__header">
+        <p class="eyebrow">Miért a CGNV?</p>
+        <h2 id="szolgaltatasok-title">AI videók, amelyek illeszkednek a márkádhoz</h2>
+        <p class="section__lead">Válaszd ki a célt, tölts fel briefet vagy elemeket, és hagyd, hogy az AI összerakja a teljes történetet – képpel, hanggal, felirattal.</p>
+      </div>
+      <div class="card-grid">
+        <article class="card">
+          <div class="icon">⚡</div>
+          <h3>Gyors kreatív iteráció</h3>
+          <p>Perceken belül több változatot kapsz, automatikus A/B teszt javaslatokkal.</p>
+        </article>
+        <article class="card">
+          <div class="icon">🎨</div>
+          <h3>Brand styling</h3>
+          <p>Töltsd fel a logót, színkódot, és a CGNV minden exportot ehhez igazít.</p>
+        </article>
+        <article class="card">
+          <div class="icon">🗣️</div>
+          <h3>AI narráció & felirat</h3>
+          <p>Természetes, magyar nyelvű TTS hangok, automatikus szinkronizált feliratokkal.</p>
+        </article>
+        <article class="card">
+          <div class="icon">📱</div>
+          <h3>Platform-ready</h3>
+          <p>TikTok, Insta Reels, YouTube Shorts és hirdetési formátumok egy kattintással.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="folyamat" class="section steps" aria-labelledby="folyamat-title">
+      <div class="section__header">
+        <p class="eyebrow">3 lépés</p>
+        <h2 id="folyamat-title">Így készül el a videód</h2>
+      </div>
+      <div class="step-grid">
+        <div class="step">
+          <div class="step__number">1</div>
+          <div>
+            <h3>Brief + feltöltés</h3>
+            <p>Add meg az üzenetet, tölts fel képet, logót vagy rövid klipet.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step__number">2</div>
+          <div>
+            <h3>AI kompozíció</h3>
+            <p>Az engine felépíti a jeleneteket, hangot generál és illeszti a brand színeket.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step__number">3</div>
+          <div>
+            <h3>Render & megosztás</h3>
+            <p>4K export, automatikus felirat, és kész a megosztási csomag.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="ertekelesek" class="section testimonials" aria-labelledby="ertekelesek-title">
+      <div class="section__header">
+        <p class="eyebrow">Akik már használják</p>
+        <h2 id="ertekelesek-title">Eredmények számokban</h2>
+      </div>
+      <div class="testimonial-grid">
+        <article class="testimonial">
+          <p class="quote">„A CGNV-vel 4 különböző videót generáltunk kevesebb mint egy óra alatt – A/B tesztben 28% CTR növekedés.”</p>
+          <p class="author">Márk, performance lead</p>
+        </article>
+        <article class="testimonial">
+          <p class="quote">„A brand-safe sablonok miatt bátran adtuk át a kreatívot az AI-nak. Az időnyerés heti 6 óra.”</p>
+          <p class="author">Lilla, social manager</p>
+        </article>
+        <article class="testimonial">
+          <p class="quote">„A magyar TTS és a gyors feliratozás miatt pár perc alatt publikálunk Shorts tartalmakat.”</p>
+          <p class="author">Gábor, content lead</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section cta" aria-labelledby="cta-title">
+      <div class="cta__content">
+        <div>
+          <p class="eyebrow">Indulj el most</p>
+          <h2 id="cta-title">Regisztrálj és generálj egy ingyenes próba videót</h2>
+          <p class="section__lead">Próbáld ki 14 napig korlátlan renderrel, és nézd meg, hogyan illeszkedik a CGNV a napi munkafolyamatodba.</p>
+        </div>
+        <div class="cta__actions">
+          <button class="btn" id="cta-reg">Ingyenes próba indítása</button>
+          <button class="btn ghost" data-scroll="#kapcsolat">Kapcsolatfelvétel</button>
+        </div>
+      </div>
+    </section>
+
+    <section id="kapcsolat" class="section contact" aria-labelledby="kapcsolat-title">
+      <div>
+        <h2 id="kapcsolat-title">Kérdésed van? Írj nekünk!</h2>
+        <p class="section__lead">24 órán belül válaszolunk, és segítünk kiválasztani a megfelelő csomagot.</p>
+      </div>
+      <div class="contact__methods">
+        <div class="contact__card">
+          <p class="label">E-mail</p>
+          <p class="value">hello@cgnv.ai</p>
+        </div>
+        <div class="contact__card">
+          <p class="label">Telefon</p>
+          <p class="value">+36 30 555 1212</p>
+        </div>
+        <div class="contact__card">
+          <p class="label">Időpont</p>
+          <p class="value">30 perces demo hívás Teams-en</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>© 2024 CGNV • AI videó platform</p>
+    <div class="footer__links">
+      <a href="#szolgaltatasok">Szolgáltatások</a>
+      <a href="#folyamat">Folyamat</a>
+      <a href="#kapcsolat">Kapcsolat</a>
+    </div>
+  </footer>
 
   <div id="registration-modal" class="modal" aria-hidden="true" role="dialog" aria-labelledby="registration-title">
     <div class="modal__content">
       <button id="close-modal" class="modal__close" aria-label="Bezaras">&times;</button>
-      <h2 id="registration-title">Regisztracio</h2>
-      <p class="modal__subtitle">Hozz letre fiokodat es kezdd el a videok generalasat pillanatok alatt!</p>
+      <h2 id="registration-title">Regisztráció</h2>
+      <p class="modal__subtitle">Hozd létre fiókodat és indítsd el az első AI videód.</p>
       <form id="registration-form" novalidate>
-        <label for="full-name">Teljes nev</label>
-        <input type="text" id="full-name" name="full-name" placeholder="Pl.: Kiss Peter" required>
+        <label for="full-name">Teljes név</label>
+        <input type="text" id="full-name" name="full-name" placeholder="Pl.: Kiss Péter" required>
 
-        <label for="email">E-mail cim</label>
+        <label for="email">E-mail cím</label>
         <input type="email" id="email" name="email" placeholder="pelda@pelda.hu" required>
 
-        <label for="password">Jelszo</label>
+        <label for="password">Jelszó</label>
         <input type="password" id="password" name="password" placeholder="Minimum 8 karakter" minlength="8" required>
 
-        <button type="submit" class="btn modal__submit">Regisztracio inditasa</button>
+        <button type="submit" class="btn modal__submit">Regisztráció indítása</button>
       </form>
       <p id="registration-feedback" class="modal__feedback" role="status" aria-live="polite"></p>
     </div>
